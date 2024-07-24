@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #774469;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.flip-card-container {
+  /* display: flex; */
+  /* gap: 20px; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* position: relative; */
+  /* top: 950px; */
+  /* margin-top: 50px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+  /* Sesuaikan sesuai kebutuhan */
+  max-height: calc(100vh - 100px);
+  /* Atur tinggi maksimum kontainer agar tetap terlihat di layar */
+  overflow-y: auto;
+  /* Tambahkan overflow-y agar dapat digulir jika konten melebihi tinggi maksimum */
+
+}
+
+
+.flip-card {
+  position: relative;
+  width: 80vw;
+  height: 60vh;
+  perspective: 3200px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.flip-card__front-side,
+.flip-card__back-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 4px 12px 40px 6px rgba(0, 0, 0, 0.09);
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s ease-in-out;
+  backface-visibility: hidden;
+}
+
+
+.flip-card__front-side {
+  background: #f0b7a4;
+  color: black;
+  transform: rotateY(0deg);
+}
+
+.flip-card__back-side {
+  /* background: hsl(215.9, 20%, 50%); */
+  background: #cf8397;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.background-baru-front {
+  background-color: #e3cccf;
+}
+
+.background-baru-back {
+  background-color: #b47880;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.main-text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.additional-text {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.flipped .flip-card__front-side {
+  transform: rotateY(-180deg);
+}
+
+.flipped .flip-card__back-side {
+  transform: rotateY(0deg);
+}
+
+.shuffle-button {
+  position: absolute;
+  background-color: #9e4586;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 40px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  /* Tambah baris ini */
+}
